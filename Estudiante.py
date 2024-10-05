@@ -1,3 +1,4 @@
+
 from Persona import Persona
 
 class Estudiante(Persona):
@@ -8,20 +9,25 @@ class Estudiante(Persona):
         self._matricula = matricula
         self._carrera = carrera
         self._semestre = semestre
-        Estudiante.contador_estudiantes += 1
 
     @property
     def matricula(self):
         return self._matricula
 
+
     @matricula.setter
     def matricula(self, valor):
         if isinstance(valor, str) and valor.strip():
+
             self._matricula = valor
 
     @property
     def carrera(self):
         return self._carrera
+
+            self.__matricula = valor
+
+
 
     @carrera.setter
     def carrera(self, valor):
@@ -46,4 +52,5 @@ class Estudiante(Persona):
 
     def presentarse(self):
         print(f"Hola, soy {self.nombre} {self.apellido}, estudiante de {self.carrera} en el semestre {self.semestre}. Mi matrícula es {self.matricula}.")
+
 
