@@ -1,6 +1,7 @@
 class Persona():
     contador_personas = 0
     
+
     def __init__(self, nombre : str, apellido : str, fecha_nacimiento : str):
         self._nombre = nombre
         self._apellido = apellido
@@ -38,7 +39,6 @@ class Persona():
     def presentarse(self):
         return f"Hola, me presento... mi nombre es {self.nombre} {self.apellido} y naci el {self.fecha_de_nacimiento}"
     
-
 
 
     
