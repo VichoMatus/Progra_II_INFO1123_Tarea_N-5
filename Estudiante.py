@@ -47,8 +47,3 @@ class Estudiante(Persona):
     def presentarse(self):
         print(f"Hola, soy {self.nombre} {self.apellido}, estudiante de {self.carrera} en el semestre {self.semestre}. Mi matrícula es {self.matricula}.")
 
-# Ejemplo de uso
-estudiante1 = Estudiante("Ana", "Pérez", "01/03/2000", "EST123", "Ingeniería", 5)
-print(estudiante1.presentarse())
-estudiante1.estudiar("Matemáticas", 3)
-print(f"Cantidad de estudiantes: {Estudiante.cantidad_estudiantes()}")

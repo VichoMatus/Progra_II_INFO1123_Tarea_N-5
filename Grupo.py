@@ -54,8 +54,8 @@ class Grupo:
 
     def mostrar_grupo(self):
         print(f"Grupo {self.numero_grupo}:")
-        print(f"  Asignatura: {self.asignatura.nombre}")
-        print(f"  Profesor: {self.profesor.nombre} {self.profesor.apellido}")
-        print(f"  Estudiantes:")
+        print(f"Asignatura: {self.asignatura.nombre}")
+        print(f"Profesor: {self.profesor.nombre} {self.profesor.apellido}")
+        print(f"Estudiantes:")
         for estudiante in self._estudiantes:
-            print(f"    - {estudiante.nombre} {estudiante.apellido} (Matrícula: {estudiante.matricula})")
+            print(f"- {estudiante.nombre} {estudiante.apellido} (Matrícula: {estudiante.matricula})")
