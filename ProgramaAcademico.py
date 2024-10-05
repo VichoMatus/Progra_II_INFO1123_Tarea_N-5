@@ -45,14 +45,12 @@ class ProgramaAcademico:
             print("El grupo que intenta agregar no es válido.")
 
     def eliminar_grupo(self, numero_grupo: int):
-    # Buscar el grupo por número
         grupo_a_eliminar = None
         for grupo in self._grupos:
             if grupo.numero_grupo == numero_grupo:
                 grupo_a_eliminar = grupo
                 break
 
-        # Si el grupo fue encontrado, eliminarlo
         if grupo_a_eliminar:
             self._grupos.remove(grupo_a_eliminar)
             print(f"El grupo con número {numero_grupo} ha sido eliminado.")

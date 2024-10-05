@@ -38,9 +38,3 @@ class Persona():
     
     def presentarse(self):
         return f"Hola, me presento... mi nombre es {self.nombre} {self.apellido} y naci el {self.fecha_de_nacimiento}"
-    
-
-
-    
-    
-    
