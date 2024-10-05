@@ -1,48 +1,56 @@
-class Estudiante:
+
+from Persona import Persona
+
+class Estudiante(Persona):
     contador_estudiantes = 0
 
-    def __init__(self, matricula, carrera, semestre):
-        self.__matricula = matricula
-        self.__carrera = carrera
-        self.__semestre = semestre
-        Estudiante.contador_estudiantes += 1
+    def __init__(self, nombre: str, apellido: str, fecha_nacimiento: str, matricula: str, carrera: str, semestre: int):
+        super().__init__(nombre, apellido, fecha_nacimiento)
+        self._matricula = matricula
+        self._carrera = carrera
+        self._semestre = semestre
 
     @property
     def matricula(self):
-        return self.__matricula
+        return self._matricula
+
 
     @matricula.setter
     def matricula(self, valor):
         if isinstance(valor, str) and valor.strip():
-            self.__matricula = valor
 
+            self._matricula = valor
 
     @property
     def carrera(self):
-        return self.__carrera
+        return self._carrera
+
+            self.__matricula = valor
+
+
 
     @carrera.setter
     def carrera(self, valor):
         if isinstance(valor, str) and valor.strip():
-            self.__carrera = valor
-
+            self._carrera = valor
 
     @property
     def semestre(self):
-        return self.__semestre
+        return self._semestre
 
     @semestre.setter
     def semestre(self, valor):
-        if isinstance(valor, str) and valor.strip():
-            self.__semestre = valor
+        if isinstance(valor, int) and valor > 0:
+            self._semestre = valor
 
+    @classmethod
+    def cantidad_estudiantes(cls):
+        return cls.contador_estudiantes
 
-    @staticmethod
-    def cantidad_estudiantes():
-        return Estudiante.contador_estudiantes
-
-    def estudiar(self, materia, horas):
-        print(f"El estudiante con matrícula {self.__matricula} está estudiando {materia} durante {horas} horas.")
+    def estudiar(self, materia: str, horas: int):
+        print(f"El estudiante {self.nombre} con matrícula {self.matricula} está estudiando {materia} durante {horas} horas.")
 
     def presentarse(self):
-        print(f"El estudiante con matrícula {self.__matricula} se está presentando.")
+        print(f"Hola, soy {self.nombre} {self.apellido}, estudiante de {self.carrera} en el semestre {self.semestre}. Mi matrícula es {self.matricula}.")
+
+
