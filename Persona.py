@@ -1,7 +1,8 @@
 class Persona():
     contador_personas = 0
     
-    def __init__(self, nombre, apellido, fecha_nacimiento):
+
+    def __init__(self, nombre : str, apellido : str, fecha_nacimiento : str):
         self._nombre = nombre
         self._apellido = apellido
         self._fecha_nacimiento = fecha_nacimiento
@@ -39,9 +40,6 @@ class Persona():
         return f"Hola, me presento... mi nombre es {self.nombre} {self.apellido} y naci el {self.fecha_de_nacimiento}"
     
 
-persona1 = Persona("Nicolas", "Martinez", "15/06/2005")
-print(persona1.presentarse())
-print(Persona.cantidad_personas())
 
     
     
