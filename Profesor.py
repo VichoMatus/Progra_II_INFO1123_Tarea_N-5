@@ -1,4 +1,4 @@
-from Persona     import Persona
+from Persona import Persona
 
 class Profesor(Persona):
     contador_profesores = 0
@@ -15,7 +15,8 @@ class Profesor(Persona):
 
     @numero_empleado.setter
     def numero_empleado(self, numero_empleado: str):
-        self._numero_empleado = numero_empleado
+        if numero_empleado.strip():
+            self._numero_empleado = numero_empleado
 
     @property
     def departamento(self):
@@ -23,7 +24,8 @@ class Profesor(Persona):
 
     @departamento.setter
     def departamento(self, departamento: str):
-        self._departamento = departamento
+        if departamento.strip():
+            self._departamento = departamento
 
     @classmethod
     def cantidad_profesores(cls):
@@ -33,4 +35,6 @@ class Profesor(Persona):
         print(f"Estoy enseñando {materia} en el departamento de {self.departamento}")
 
     def presentarse(self):
-        return f"Hola, soy el profesor {self.nombre} {self.apellido}, trabajo en el departamento de {self.departamento} con número de empleado {self.numero_empleado}."
+        return (f"Hola, soy el profesor {self.nombre} {self.apellido}, "
+                f"trabajo en el departamento de {self.departamento} "
+                f"y mi número de empleado es {self.numero_empleado}.")
