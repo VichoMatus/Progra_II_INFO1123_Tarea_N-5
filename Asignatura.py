@@ -2,9 +2,9 @@ class Asignatura:
     _contador_asignaturas = 0
 
     def __init__(self, nombre: str, codigo: str, creditos: int):
-        self.nombre = nombre   # Utiliza el setter para validación
-        self.codigo = codigo    # Utiliza el setter para validación
-        self.creditos = creditos  # Utiliza el setter para validación
+        self.nombre = nombre   
+        self.codigo = codigo  
+        self.creditos = creditos 
         Asignatura._contador_asignaturas += 1
 
     @property

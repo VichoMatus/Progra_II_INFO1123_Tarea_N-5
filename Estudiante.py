@@ -5,9 +5,9 @@ class Estudiante(Persona):
 
     def __init__(self, nombre: str, apellido: str, fecha_nacimiento: str, matricula: str, carrera: str, semestre: int):
         super().__init__(nombre, apellido, fecha_nacimiento)
-        self.matricula = matricula  # Utiliza el setter
-        self.carrera = carrera       # Utiliza el setter
-        self.semestre = semestre     # Utiliza el setter
+        self.matricula = matricula 
+        self.carrera = carrera      
+        self.semestre = semestre    
         Estudiante.contador_estudiantes += 1
 
     @property

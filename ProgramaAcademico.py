@@ -6,10 +6,10 @@ from Estudiante import Estudiante
 class ProgramaAcademico:
     contador_programas = 0
 
-    def __init__(self, nombre : str, codigo : str):
+    def __init__(self, nombre: str, codigo: str):
         self._nombre = nombre
         self._codigo = codigo
-        self._grupos = [Grupo]
+        self._grupos = []  
         ProgramaAcademico.contador_programas += 1
 
     @property
@@ -17,7 +17,7 @@ class ProgramaAcademico:
         return self._nombre
 
     @nombre.setter
-    def nombre(self, valor : str):
+    def nombre(self, valor: str):
         if isinstance(valor, str) and valor.strip():
             self._nombre = valor
 
@@ -26,7 +26,7 @@ class ProgramaAcademico:
         return self._codigo
 
     @codigo.setter
-    def codigo(self, valor : str):
+    def codigo(self, valor: str):
         if isinstance(valor, str) and valor.strip():
             self._codigo = valor
 
@@ -45,6 +45,10 @@ class ProgramaAcademico:
             print("El grupo que intenta agregar no es válido.")
 
     def eliminar_grupo(self, numero_grupo: int):
+        if not self._grupos:
+            print("No hay grupos en este programa.")
+            return
+
         grupo_a_eliminar = None
         for grupo in self._grupos:
             if grupo.numero_grupo == numero_grupo:
@@ -56,7 +60,6 @@ class ProgramaAcademico:
             print(f"El grupo con número {numero_grupo} ha sido eliminado.")
         else:
             print(f"No se encontró un grupo con el número {numero_grupo}.")
-
 
     def mostrar_programa(self):
         print(f"Programa Académico: {self.nombre} (Código: {self.codigo})")

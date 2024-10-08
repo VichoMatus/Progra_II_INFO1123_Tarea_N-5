@@ -9,7 +9,7 @@ class Grupo:
         self._numero_grupo = numero_grupo
         self._asignatura = asignatura
         self._profesor = profesor
-        self._estudiantes = []  # Inicializar con una lista vacía
+        self._estudiantes = []  
         Grupo.contador_grupos += 1
 
     @property
