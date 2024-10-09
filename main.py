@@ -214,6 +214,8 @@ class Aplicacion(ctk.CTk):
 
         if not nombre or not codigo or not creditos:
             messagebox.showerror("Error", "Todos los campos son obligatorios")
+        elif not nombre.isalpha():
+            messagebox.showerror("Error", "El nombre de la asignatura solo debe contener letras")
         elif not creditos.isdigit() or int(creditos) <= 0:
             messagebox.showerror("Error", "Los créditos deben ser un número positivo")
         else:
@@ -372,14 +374,15 @@ class Aplicacion(ctk.CTk):
         boton_modificar.pack(padx=5, pady=5)
 
     def agregar_programa_academico(self):
-        nombre = self.entry_nombre_programa.get().strip()
-        duracion = self.entry_duracion_programa.get().strip()
-        carrera = self.entry_carrera_programa.get().strip()
+        nombre_programa = self.entry_nombre_programa.get().strip()
 
-        if not nombre or not duracion or not carrera:
-            messagebox.showerror("Error", "Todos los campos son obligatorios")
+        if not nombre_programa:
+            messagebox.showerror("Error", "El nombre del programa académico es obligatorio")
+        elif not nombre_programa.isalpha():
+            messagebox.showerror("Error", "El nombre del programa académico solo debe contener letras")
         else:
-            self.treeview_programa_academico.insert("", "end", values=(nombre, duracion, carrera))
+            # Aquí debes insertar el programa en el Treeview o donde corresponda
+            self.treeview_programa_academico.insert("", "end", values=(nombre_programa))
 
     def eliminar_programa_academico(self):
         selected_item = self.treeview_programa_academico.selection()
